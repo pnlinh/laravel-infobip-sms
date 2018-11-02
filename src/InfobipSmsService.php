@@ -41,13 +41,14 @@ class InfobipSmsService
      *
      * @param $to
      * @param $text
+     *
      * @return array
      */
     private function setPostData($to, $text)
     {
         return [
             'from' => $this->from,
-            'to' => (array) $to,
+            'to'   => (array) $to,
             'text' => $text,
         ];
     }
@@ -59,6 +60,7 @@ class InfobipSmsService
      *
      * @param $to
      * @param $text
+     *
      * @return array
      */
     public function send($to, $text)
