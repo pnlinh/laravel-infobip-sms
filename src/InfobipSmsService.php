@@ -5,7 +5,7 @@ namespace Pnlinh\InfobipSms;
 class InfobipSmsService
 {
     /** @var int retry time */
-    public const RETRY_TIME = 1;
+    public const RETRY_TIME = 3;
 
     /** @var string */
     private $username;
@@ -41,13 +41,14 @@ class InfobipSmsService
      *
      * @param $to
      * @param $text
+     *
      * @return array
      */
     private function setPostData($to, $text)
     {
         return [
             'from' => $this->from,
-            'to' => (array) $to,
+            'to'   => (array) $to,
             'text' => $text,
         ];
     }
@@ -59,6 +60,7 @@ class InfobipSmsService
      *
      * @param $to
      * @param $text
+     *
      * @return array
      */
     public function send($to, $text)
@@ -75,12 +77,12 @@ class InfobipSmsService
         curl_setopt($ch, CURLOPT_HTTPHEADER, $this->header);
         curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
         curl_setopt($ch, CURLOPT_USERPWD, $this->username.':'.$this->password);
-        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 2);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 120);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($ch, CURLOPT_MAXREDIRS, 2);
         curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 15);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 30);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $postDataJson);
 
         // Response of the POST request
