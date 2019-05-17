@@ -56,7 +56,7 @@ class InfobipSmsService
     /**
      * Do send sms.
      *
-     * @link https://www.infobip.com/en/blog/step-by-step-sms-api-php-tutorial-create-your-new-web-app
+     * @see https://www.infobip.com/en/blog/step-by-step-sms-api-php-tutorial-create-your-new-web-app
      *
      * @param $to
      * @param $text
