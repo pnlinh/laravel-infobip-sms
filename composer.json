@@ -17,6 +17,11 @@
   "require": {
     "php": "^7.1"
   },
+  "require-dev": {
+    "orchestra/testbench": "^3.8",
+    "mockery/mockery": "^1.2",
+    "phpunit/phpunit": "^8.4@dev"
+  },
   "autoload": {
     "psr-4": {
       "Pnlinh\\InfobipSms\\": "src/"
@@ -24,6 +29,11 @@
     "files": [
       "src/helpers.php"
     ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Pnlinh\\InfobipSms\\Tests\\": "tests/"
+    }
   },
   "extra": {
     "laravel": {
@@ -34,5 +44,10 @@
         "InfobipSms": "Pnlinh\\InfobipSms\\Facades\\InfobipSms"
       }
     }
+  },
+  "scripts": {
+    "test": [
+      "vendor/bin/phpunit"
+    ]
   }
 }
