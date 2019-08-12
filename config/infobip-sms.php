@@ -3,7 +3,7 @@
 /**
  * This is config for Infobip SMS.
  *
- * @link https://dev.infobip.com/send-sms/single-sms-message
+ * @see https://dev.infobip.com/send-sms/single-sms-message
  */
 return [
     'from'     => env('INFOBIP_FROM', 'Laravel'),
