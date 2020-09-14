@@ -34,7 +34,8 @@ class InfobipSmsServiceProvider extends ServiceProvider
             return new InfobipSmsService(
                 $app['config']['infobip-sms.from'],
                 $app['config']['infobip-sms.username'],
-                $app['config']['infobip-sms.password']
+                $app['config']['infobip-sms.password'],
+                $app['config']['infobip-sms.apiKey']
             );
         });
 
