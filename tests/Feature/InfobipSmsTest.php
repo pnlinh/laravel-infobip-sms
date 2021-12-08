@@ -10,7 +10,7 @@ class InfobipSmsTest extends TestCase
     /** @test */
     public function it_can_created()
     {
-        $infobipSmsService = new InfobipSmsService('foo', 'bar', '123');
+        $infobipSmsService = new InfobipSmsService('foo', 'api_key');
 
         $this->assertNotNull($infobipSmsService);
     }
@@ -18,7 +18,7 @@ class InfobipSmsTest extends TestCase
     /** @test */
     public function it_can_un_authorized()
     {
-        $infobipSmsService = new InfobipSmsService('foo', 'bar', '123');
+        $infobipSmsService = new InfobipSmsService('foo', 'api_key');
 
         $response = $infobipSmsService->send('84123456789', 'la la la');
 

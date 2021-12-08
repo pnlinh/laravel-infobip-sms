@@ -7,6 +7,5 @@
  */
 return [
     'from'     => env('INFOBIP_FROM', 'Laravel'),
-    'username' => env('INFOBIP_USERNAME', 'user'),
-    'password' => env('INFOBIP_PASSWORD', '123456'),
+    'apiKey'   => env('INFOBIP_APIKEY', '')
 ];

@@ -33,8 +33,7 @@ class InfobipSmsServiceProvider extends ServiceProvider
         $this->app->singleton('infobip.sms', function (Container $app) {
             return new InfobipSmsService(
                 $app['config']['infobip-sms.from'],
-                $app['config']['infobip-sms.username'],
-                $app['config']['infobip-sms.password']
+                $app['config']['infobip-sms.apiKey']
             );
         });
 

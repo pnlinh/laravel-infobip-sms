@@ -8,10 +8,7 @@ class InfobipSmsService
     public const RETRY_TIME = 3;
 
     /** @var string */
-    private $username;
-
-    /** @var string */
-    private $password;
+    private $apiKey;
 
     /** @var string */
     private $postUrl = 'https://api.infobip.com/sms/1/text/single';
@@ -26,14 +23,14 @@ class InfobipSmsService
      * InfobipSmsService constructor.
      *
      * @param $from
-     * @param $username
-     * @param $password
+     * @param $apiKey
      */
-    public function __construct($from, $username, $password)
+    public function __construct($from, $apiKey)
     {
         $this->from = $from;
-        $this->username = $username;
-        $this->password = $password;
+        $this->apiKey = $apiKey;
+
+        array_push($this->header, "Authorization: App " . $this->apiKey);
     }
 
     /**
@@ -76,7 +73,6 @@ class InfobipSmsService
         curl_setopt($ch, CURLOPT_URL, $this->postUrl);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $this->header);
         curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-        curl_setopt($ch, CURLOPT_USERPWD, $this->username.':'.$this->password);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 120);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);

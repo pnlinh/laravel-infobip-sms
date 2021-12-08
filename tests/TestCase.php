@@ -21,7 +21,6 @@ class TestCase extends \Orchestra\Testbench\TestCase
     public function getEnvironmentSetUp($app)
     {
         $app['config']->set('infobip-sms.from', 'foo');
-        $app['config']->set('infobip-sms.username', 'bar');
-        $app['config']->set('infobip-sms.password', '123');
+        $app['config']->set('infobip-sms.apiKey', 'api_key');
     }
 }
