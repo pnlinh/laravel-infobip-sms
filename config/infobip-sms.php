@@ -7,5 +7,5 @@
  */
 return [
     'from'     => env('INFOBIP_FROM', 'Laravel'),
-    'apiKey'   => env('INFOBIP_APIKEY', '')
+    'apiKey'   => env('INFOBIP_APIKEY', ''),
 ];
