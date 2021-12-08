@@ -30,7 +30,7 @@ class InfobipSmsService
         $this->from = $from;
         $this->apiKey = $apiKey;
 
-        array_push($this->header, 'Authorization: App ' . $this->apiKey);
+        array_push($this->header, 'Authorization: App '.$this->apiKey);
     }
 
     /**
