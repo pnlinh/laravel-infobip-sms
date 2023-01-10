@@ -1,5 +1,6 @@
 # Send Sms use Infobip in Laravel
 [![StyleCI](https://github.styleci.io/repos/155829796/shield?branch=master)](https://github.styleci.io/repos/155829796)
+[![Quality Score](https://img.shields.io/scrutinizer/quality/g/pnlinh/laravel-infobip-sms.svg?style=flat-square)](https://scrutinizer-ci.com/g/pnlinh/laravel-infobip-sms/)
 
 ## Requirements
 
